@@ -77,18 +77,19 @@ This means the user sees the tool action in their feed **before** the model even
 ### Happy Path
 
 1. Rep opens the app on their phone/desktop after a call
-2. Taps the mic button -> WebRTC connection established (~1s)
+2. Taps the mic button → WebRTC connection established (~1s)
 3. Badge changes from "Offline" to "Live"
 4. Rep speaks: *"Just got off a great call with Sarah Chen at TechFlow. She's interested in the enterprise plan and needs SSO integration. Budget is approved for Q2."*
 5. User's speech appears as a transcribed bubble in the feed
-6. Agent responds verbally + two tool call cards appear:
-   - **Save Note**: customer_name: "Sarah Chen", summary, key_points, sentiment: positive
-   - **Create Task**: "Send SSO integration docs to Sarah Chen", due: tomorrow
-7. Agent says: *"Got it, I've saved your call notes for Sarah and created a task to send the SSO docs tomorrow. Anything else?"*
-8. Rep: *"What do we know about her deal?"*
-9. **Search Customer** card appears -> shows TechFlow deal at proposal stage, $45k
-10. Agent summarizes the context verbally
-11. Rep taps the stop button to end session
+6. **Save Note** tool card appears (pending → complete) — customer_name: "Sarah Chen", summary, sentiment: positive
+7. Agent says: *"Got it, note saved. Anything you'd like me to follow up on?"*
+8. Rep: *"Remind me to send the SSO integration docs to Sarah."*
+9. **Create Task** tool card appears — title: "Send SSO integration docs to Sarah Chen"
+10. Agent confirms: *"Done, task created."*
+11. Rep: *"What do we know about TechFlow?"*
+12. **Search Customer** card appears → shows TechFlow at proposal stage, $45k, VP of Engineering is decision maker
+13. Agent summarizes the context verbally
+14. Rep taps the stop button to end session
 
 ### Edge Case: Transcription Error
 
