@@ -4,8 +4,9 @@ A voice-first chat experience that helps sales reps quickly ask questions during
 
 ## Quick Start
 
+Run from the repository root:
+
 ```bash
-cd sales-voice-agent
 npm install
 cp .env.example .env.local
 # Add your OpenAI API key to .env.local
