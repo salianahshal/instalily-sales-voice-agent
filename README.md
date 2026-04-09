@@ -93,12 +93,12 @@ This means the user sees the tool action in their feed **before** the model even
 
 ### Edge Case: Transcription Error
 
-1. Rep says: *"Schedule a follow-up with Marcus at RetailPro"*
-2. Transcript shows: *"Schedule a follow-up with Marcus at retail pro"*
-3. Rep taps the transcribed message -> correction dialog opens
+1. Rep says: *"Schedule a follow-up with Marcus at RetailPro Solutions"*
+2. Agent creates the task but may truncate the name (e.g., "Follow up with Marcus") dropping the company
+3. Rep taps the transcribed message → correction dialog opens with original text pre-filled
 4. Rep corrects to: *"Marcus at RetailPro Solutions"*
 5. A correction message is sent to the model: *"Correction: I actually said 'Marcus at RetailPro Solutions', not what was transcribed."*
-6. Agent acknowledges and uses the corrected name for the task
+6. Agent acknowledges and creates an updated task with the correct name
 
 ## Additional Goals Implemented
 
@@ -130,14 +130,8 @@ Three fully functional tools with structured input/output:
 
 ## Deployment
 
-Deploy to Vercel:
+Live at: [https://instalily-sales-voice-agent.vercel.app/](https://instalily-sales-voice-agent.vercel.app/)
 
-```bash
-npm run build
-vercel --prod
-```
-
-Set `OPENAI_API_KEY` in Vercel's environment variables.
 
 ## Key Files
 
